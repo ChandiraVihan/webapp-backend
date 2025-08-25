@@ -3,6 +3,5 @@ package com.loginproject.loginapp;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    // No custom methods needed for now
    
 }
