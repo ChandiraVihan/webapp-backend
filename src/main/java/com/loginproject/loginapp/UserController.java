@@ -22,7 +22,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepo;
 
-    // LOGIN Endpoint
+
  @PostMapping("/login")
 public ResponseEntity<?> login(@RequestBody User input) {
     Optional<User> user = userRepo.findByGmailAndPassword(
@@ -30,7 +30,6 @@ public ResponseEntity<?> login(@RequestBody User input) {
     );
 
     if (user.isPresent()) {
-        // Return only username and role (not password or sensitive data)
         Map<String, Object> response = new HashMap<>();
         response.put("username", user.get().getUsername());
         response.put("role", user.get().getRole());
@@ -43,7 +42,6 @@ public ResponseEntity<?> login(@RequestBody User input) {
 }
 
 
-    // ✅ REGISTER Endpoint — fixed
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User newUser) {
         Optional<User> existingUser = userRepo.findByGmail(newUser.getGmail());
