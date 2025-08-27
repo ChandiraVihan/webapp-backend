@@ -15,17 +15,19 @@ public class Product {
     private Long pro_id;
 
     private String pro_name;        // Product name
-    private String description; // Short description
+    private String category; // Short description
     private double price;       // Price of product
     private int quantity;       // Inventory stock
+    private String imagePath;   //path to the image
 
     public Product() {}
 
-    public Product(String pro_name, String description, double price, int quantity) {
+    public Product(String pro_name, String category, double price, int quantity,String imagePath) {
         this.pro_name = pro_name;
-        this.description = description;
+        this.category = category;
         this.price = price;
         this.quantity = quantity;
+        this.imagePath = imagePath;
     }
 
     // Getters and setters
@@ -41,12 +43,12 @@ public class Product {
         this.pro_name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCategory() {
+        return category;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public double getPrice() {
@@ -63,6 +65,14 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getImagePath(){
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath){
+        this.imagePath=imagePath;
     }
 }
 
