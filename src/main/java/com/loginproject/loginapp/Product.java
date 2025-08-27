@@ -14,8 +14,8 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pro_id;
 
-    private String pro_name;        // Product name
-    private String category; // Short description
+    private String pro_name;     // Product name
+    private String category;    // Product category
     private double price;       // Price of product
     private int quantity;       // Inventory stock
     private String imagePath;   //path to the image
